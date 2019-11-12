@@ -60,7 +60,7 @@ namespace DataStructure
             }
 
             if (pointerFindNode == null)
-                throw new System.ArgumentException("This node does not exist");
+                throw new System.ArgumentNullException("This node does not exist");
 
 
             toAdd._next = pointerFindNode._next;
