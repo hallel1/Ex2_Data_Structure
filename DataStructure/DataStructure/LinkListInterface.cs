@@ -10,5 +10,6 @@ namespace DataStructure
     {
         void AddFirst(T t);
         void AddLast(T t);
+        void AddAfterExistsNode(Node<T> existNode, T newVal);
     }
 }
