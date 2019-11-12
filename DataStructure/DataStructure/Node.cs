@@ -8,13 +8,13 @@ namespace DataStructure
 {
     class Node<T>
     {
-        public T data { get; set; }
-        public Node<T> next { get; set; }
+        public T _data { get; set; }
+        public Node<T> _next { get; set; }
 
         public Node(T t)
         {
-            next = null;
-            data = t;
+            _next = null;
+            _data = t;
         }
     }
 }
