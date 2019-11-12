@@ -11,10 +11,13 @@ namespace DataStructure
         public T _data { get; set; }
         public Node<T> _next { get; set; }
 
+       // public int _index { get; set; }
+
         public Node(T t)
         {
             _next = null;
             _data = t;
+          //  _index = index;
         }
     }
 }
