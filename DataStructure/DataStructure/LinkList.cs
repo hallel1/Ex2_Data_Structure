@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructure 
+namespace DataStructure
 {
 
     class LinkList<T> : LinkListInterface<T>
     {
         private Node<T> _head;
         private Node<T> _tail;
-        //private static int _indexNode;
-
-        public LinkList(){
+        public LinkList()
+        {
             _head = null;
             _tail = null;
-          //  _indexNode++;
+            //  _indexNode++;
         }
         public void AddFirst(T t)
         {
@@ -29,6 +28,8 @@ namespace DataStructure
             _head = toAdd;
 
         }
+
+
 
         public void AddLast(T t)
         {
@@ -49,7 +50,7 @@ namespace DataStructure
         {
             Node<T> toAdd = new Node<T>(newVal);
             Node<T> pointerFindNode = null;
-            Node<T> pointerMoveOnList =_head;
+            Node<T> pointerMoveOnList = _head;
 
             while (pointerMoveOnList != null)
             {
@@ -68,5 +69,46 @@ namespace DataStructure
         }
 
 
+        public Node<T> this[int index]
+        {
+
+            get
+            {
+                int count = 0;
+                Node<T> pointerMoveOnList = _head;
+                while (count != index && pointerMoveOnList != null)
+                {
+                    count++;
+                    pointerMoveOnList = pointerMoveOnList._next;
+                }
+
+                return pointerMoveOnList;
+            }
+            set
+            {
+
+
+
+                
+            }
+
+        }
+        private Node<T> FindNodeByIndex(int index)
+        {
+            int count = 0;
+            Node<T> pointerMoveOnList = _head;
+            while (count != index && pointerMoveOnList != null)
+            {
+                count++;
+                pointerMoveOnList = pointerMoveOnList._next;
+            }
+            if(count != index)
+                throw new IndexOutOfRangeException();
+            
+            return pointerMoveOnList;
+        }
     }
-}
+ }
+
+
+
