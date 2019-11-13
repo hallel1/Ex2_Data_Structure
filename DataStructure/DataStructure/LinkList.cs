@@ -49,47 +49,38 @@ namespace DataStructure
         public void AddAfterExistsNode(Node<T> existNode, T newVal)
         {
             Node<T> toAdd = new Node<T>(newVal);
-            Node<T> pointerFindNode = null;
             Node<T> pointerMoveOnList = _head;
 
             while (pointerMoveOnList != null)
             {
                 if (pointerMoveOnList._data.Equals(existNode._data))
-                    pointerFindNode = pointerMoveOnList;
-
+                {
+                    toAdd._next = pointerMoveOnList._next;
+                    pointerMoveOnList._next = toAdd;
+                    return;
+                }
                 pointerMoveOnList = pointerMoveOnList._next;
             }
 
-            if (pointerFindNode == null)
+            if (pointerMoveOnList == null)
                 throw new System.ArgumentNullException("This node does not exist");
 
-
-            toAdd._next = pointerFindNode._next;
-            pointerFindNode._next = toAdd;
         }
 
 
-        public Node<T> this[int index]
+        public T this[int index]
         {
 
             get
             {
-                int count = 0;
-                Node<T> pointerMoveOnList = _head;
-                while (count != index && pointerMoveOnList != null)
-                {
-                    count++;
-                    pointerMoveOnList = pointerMoveOnList._next;
-                }
-
-                return pointerMoveOnList;
+                return FindNodeByIndex(index)._data;
             }
             set
             {
-
-
-
-                
+                Node<T> nodeInIndex = FindNodeByIndex(index);
+                Node<T> toAdd = new Node<T>(value);
+                toAdd._next = nodeInIndex._next;
+                nodeInIndex._next = toAdd;
             }
 
         }
