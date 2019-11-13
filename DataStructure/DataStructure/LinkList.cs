@@ -9,7 +9,7 @@ namespace DataStructure
 
     public class LinkList<T> : LinkListInterface<T>
     {
-        public Node<T> _head { get; private set; }
+        public Node<T> _head { get; set; }
         public Node<T> _tail { get; private set; }
         public LinkList()
         {
