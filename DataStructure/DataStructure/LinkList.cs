@@ -62,8 +62,7 @@ namespace DataStructure
 
         public void DeleteNode(T val)
         {
-            Node<T> pointerDeleteNode;
-            Node<T> pointerPrevNode;
+
             if (_head == null)
                 throw new System.ArgumentException("This node does not exist");
             if (_head == _tail)
@@ -82,8 +81,8 @@ namespace DataStructure
                 _head = _head._next;
                 return;
             }
-            pointerPrevNode = FindPrevNodeByValue(val);
-            pointerPrevNode._next = pointerPrevNode._next._next;
+            if(!DeleteNodeByValue(val))
+                throw new System.ArgumentException("This node does not exist");
 
         }
 
@@ -133,7 +132,7 @@ namespace DataStructure
             }
             return null;
         }
-        private bool DeleteNodeByValue(T val)// return false if there is no node
+        private bool DeleteNodeByValue(T val)
         {
             Node<T> pointerMoveOnList = _head;
             Node<T> pointerPrevNode = _head;
@@ -144,7 +143,7 @@ namespace DataStructure
                 if (pointerMoveOnList._data.Equals(val))
                 {
                     if (pointerMoveOnList == _tail)
-                        _tail = null;
+                        _tail = pointerPrevNode;
 
                     pointerPrevNode._next = pointerMoveOnList._next;
 
