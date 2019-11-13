@@ -134,6 +134,7 @@ namespace UnitTestDataStructure
             l.DeleteNode(5);
 
         }
+        [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void DeleteNode_ShuldThrowExceptionOnNoExistsNode()
         {
@@ -202,7 +203,7 @@ namespace UnitTestDataStructure
         }
 
         [TestMethod]
-        public void DeleteNode_ShuldDeleteNodeFroTheEnd()
+        public void DeleteNode_ShuldDeleteNodeFromTheEnd()
         {
             // Arrange   
             LinkList<int> l = new LinkList<int>();
@@ -219,7 +220,47 @@ namespace UnitTestDataStructure
 
         }
 
+        [TestMethod]
+        public void AddBefforeExistsNode_ShuldAddNodeToTheHead()
+        {               
+            LinkList<int> l = new LinkList<int>();
+            l.AddFirst(0);
+            l.AddLast(1);
+            
+            l.AddBefforeExistsNode(l._head,2);
+            
+            Assert.AreEqual(2, l._head._data);
 
+
+        }
+        [TestMethod]
+        public void AddBefforeExistsNode_ShuldAddNodeToTheMiddle()
+        {
+            LinkList<int> l = new LinkList<int>();
+            l.AddFirst(0);
+            l.AddLast(1);
+
+            l.AddBefforeExistsNode(l._tail, 2);
+
+            Assert.AreEqual(2, l[1]);
+
+
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void AddBefforeExistsNode_ShuldThrowExceptionOnNoExistsNode()
+        {
+            // Arrange   
+            LinkList<int> l = new LinkList<int>();
+            Node<int> n = new Node<int>(3);
+            l.AddFirst(0);
+            l.AddFirst(1);
+            l.AddFirst(2);
+
+            // Act
+            l.AddBefforeExistsNode(n,7);
+
+        }
 
     }
 }
