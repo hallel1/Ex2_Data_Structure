@@ -15,7 +15,6 @@ namespace DataStructure
         {
             _head = null;
             _tail = null;
-            //  _indexNode++;
         }
         public void AddFirst(T t)
         {
@@ -47,21 +46,44 @@ namespace DataStructure
         public void AddAfterExistsNode(Node<T> existNode, T newVal)
         {
             Node<T> toAdd = new Node<T>(newVal);
-            Node<T> pointerMoveOnList = _head;
+            Node<T> pointerExistNode;
 
-            while (pointerMoveOnList != null)
+            pointerExistNode = FindNodeByValue(existNode._data, false);
+
+            if (pointerExistNode == null)
             {
-                if (pointerMoveOnList._data.Equals(existNode._data))
-                {
-                    toAdd._next = pointerMoveOnList._next;
-                    pointerMoveOnList._next = toAdd;
-                    return;
-                }
-                pointerMoveOnList = pointerMoveOnList._next;
+                throw new System.ArgumentException("This node does not exist");
             }
 
-            if (pointerMoveOnList == null)
-                throw new System.ArgumentNullException("This node does not exist");
+            toAdd._next = pointerExistNode._next;
+            pointerExistNode._next = toAdd;
+
+        }
+
+        public void DeleteNode(T val)
+        {
+            Node<T> pointerDeleteNode;
+            Node<T> pointerPrevNode;
+            if (_head == null)
+                throw new System.ArgumentException("This node does not exist");
+            if (_head == _tail)
+            {
+                if (_head._data.Equals(val))
+                {
+                    _head = null;
+                    _tail = null;
+                    return;
+                }
+
+                throw new System.ArgumentException("This node does not exist");
+            }
+            if (_head._data.Equals(val))
+            {
+                _head = _head._next;
+                return;
+            }
+            pointerPrevNode = FindPrevNodeByValue(val);
+            pointerPrevNode._next = pointerPrevNode._next._next;
 
         }
 
@@ -91,13 +113,50 @@ namespace DataStructure
                 count++;
                 pointerMoveOnList = pointerMoveOnList._next;
             }
-            if(count != index)
+            if (count != index)
                 throw new IndexOutOfRangeException();
-            
+
             return pointerMoveOnList;
         }
+
+        private Node<T> FindNodeByValue(T val, bool needToDelete)
+        {
+            Node<T> pointerMoveOnList = _head;
+
+            while (pointerMoveOnList != null)
+            {
+                if (pointerMoveOnList._data.Equals(val))
+                {
+                    return pointerMoveOnList;
+                }
+                pointerMoveOnList = pointerMoveOnList._next;
+            }
+            return null;
+        }
+        private bool DeleteNodeByValue(T val)// return false if there is no node
+        {
+            Node<T> pointerMoveOnList = _head;
+            Node<T> pointerPrevNode = _head;
+
+            while (pointerMoveOnList._next != null)
+            {
+                pointerMoveOnList = pointerMoveOnList._next;
+                if (pointerMoveOnList._data.Equals(val))
+                {
+                    if (pointerMoveOnList == _tail)
+                        _tail = null;
+
+                    pointerPrevNode._next = pointerMoveOnList._next;
+
+                    return true;
+                }
+                pointerPrevNode = pointerPrevNode._next;
+            }
+            return false;
+        }
+
     }
- }
+}
 
 
 

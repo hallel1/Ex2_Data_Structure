@@ -21,7 +21,19 @@ namespace UnitTestDataStructure
             Assert.AreEqual(l._head._data,n1._data);
 
         }
+        [TestMethod]
+        public void AddFirst_ShuldAddNodeToTheHeadAndCheckWithIndexer()
+        {
+            // Arrange   
+            LinkList<int> l = new LinkList<int>();
 
+            // Act
+            l.AddFirst(1);
+
+            // Assert
+            Assert.AreEqual(l[0], l._head._data);
+
+        }
         [TestMethod]
         public void AddFirst_ShuldAddNodeToTheHeadWithTwoNodes()
         {
@@ -82,7 +94,7 @@ namespace UnitTestDataStructure
            
 
             // Assert
-            Assert.AreEqual(l._head._next._data,2);
+            Assert.AreEqual(l[1],2);
 
         }
         [TestMethod]
@@ -101,6 +113,7 @@ namespace UnitTestDataStructure
             Assert.AreEqual(l._head._next._data, 2);
 
         }
+
 
     }
 }
