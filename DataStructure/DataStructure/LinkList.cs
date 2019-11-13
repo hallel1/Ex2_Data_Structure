@@ -85,6 +85,15 @@ namespace DataStructure
                 throw new System.ArgumentException("This node does not exist");
 
         }
+        public void AddBefforeExistsNode(Node<T> existNode, T val)
+        {
+            if (_head._data.Equals(existNode._data))
+                AddFirst(val);
+
+
+
+
+        }
 
 
         public T this[int index]
@@ -97,9 +106,7 @@ namespace DataStructure
             set
             {
                 Node<T> nodeInIndex = FindNodeByIndex(index);
-                Node<T> toAdd = new Node<T>(value);
-                toAdd._next = nodeInIndex._next;
-                nodeInIndex._next = toAdd;
+                nodeInIndex._data = value;
             }
 
         }
@@ -153,6 +160,7 @@ namespace DataStructure
             }
             return false;
         }
+
 
     }
 }

@@ -85,11 +85,10 @@ namespace UnitTestDataStructure
         {
             // Arrange   
             LinkList<int> l = new LinkList<int>();
-
-
-            // Act
             l.AddFirst(1);
             l.AddFirst(4);
+
+            // Act
             l.AddAfterExistsNode(l._head,2);
            
 
@@ -102,10 +101,9 @@ namespace UnitTestDataStructure
         {
             // Arrange   
             LinkList<int> l = new LinkList<int>();
-
+            l.AddFirst(1);
 
             // Act
-            l.AddFirst(1);
             l.AddAfterExistsNode(l._head, 2);
 
 
@@ -113,6 +111,114 @@ namespace UnitTestDataStructure
             Assert.AreEqual(l._head._next._data, 2);
 
         }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DeleteNode_ShuldThrowExceptionOnEmptyList()
+        {
+            // Arrange   
+            LinkList<int> l = new LinkList<int>();
+
+            // Act
+            l.DeleteNode(5);
+
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DeleteNode_ShuldThrowExceptionOnSingleNodeList()
+        {
+            // Arrange   
+            LinkList<int> l = new LinkList<int>();
+            l.AddFirst(4);
+
+            // Act
+            l.DeleteNode(5);
+
+        }
+        [ExpectedException(typeof(ArgumentException))]
+        public void DeleteNode_ShuldThrowExceptionOnNoExistsNode()
+        {
+            // Arrange   
+            LinkList<int> l = new LinkList<int>();
+            l.AddFirst(0);
+            l.AddFirst(1);
+            l.AddFirst(2);
+
+            // Act
+            l.DeleteNode(3);
+
+        }
+        [TestMethod]
+        public void DeleteNode_ShuldDeleteFromListWithSingleNode()
+        {
+            // Arrange   
+            LinkList<int> l = new LinkList<int>();
+            l.AddFirst(5);
+
+            // Act
+            l.DeleteNode(5);
+
+            // Assert
+            Assert.AreEqual(l._head, null);
+            Assert.AreEqual(l._tail, null);
+
+        }
+
+        [TestMethod]
+        public void DeleteNode_ShuldDeleteNodeInTheMiddle()
+        {
+            // Arrange   
+            LinkList<int> l = new LinkList<int>();
+            l.AddFirst(0);
+            l.AddLast(1);
+            l.AddLast(2);
+            l.AddLast(3);
+
+            // Act
+            l.DeleteNode(2);
+
+            // Assert
+            Assert.AreEqual(3, l[2]);
+            
+
+        }
+
+
+        [TestMethod]
+        public void DeleteNode_ShuldDeleteNodeFroTheStart()
+        {
+            // Arrange   
+            LinkList<int> l = new LinkList<int>();
+            l.AddFirst(0);
+            l.AddLast(1);
+
+            // Act
+            l.DeleteNode(0);
+
+
+            // Assert
+            Assert.AreEqual(1, l._head._data);
+
+
+        }
+
+        [TestMethod]
+        public void DeleteNode_ShuldDeleteNodeFroTheEnd()
+        {
+            // Arrange   
+            LinkList<int> l = new LinkList<int>();
+            l.AddFirst(0);
+            l.AddLast(1);
+
+            // Act
+            l.DeleteNode(1);
+
+
+            // Assert
+            Assert.AreEqual(0, l._tail._data);
+
+
+        }
+
 
 
     }
