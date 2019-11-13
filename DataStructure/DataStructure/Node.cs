@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class Node<T>
+    public class Node<T>
     {
         public T _data { get; set; }
         public Node<T> _next { get; set; }

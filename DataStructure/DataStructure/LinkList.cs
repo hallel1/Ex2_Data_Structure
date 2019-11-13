@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace DataStructure
 {
 
-    class LinkList<T> : LinkListInterface<T>
+    public class LinkList<T> : LinkListInterface<T>
     {
-        private Node<T> _head;
-        private Node<T> _tail;
+        public Node<T> _head { get; private set; }
+        public Node<T> _tail { get; private set; }
         public LinkList()
         {
             _head = null;
@@ -28,8 +28,6 @@ namespace DataStructure
             _head = toAdd;
 
         }
-
-
 
         public void AddLast(T t)
         {

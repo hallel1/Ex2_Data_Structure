@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    interface LinkListInterface<T>
+    public interface LinkListInterface<T>
     {
         void AddFirst(T t);
         void AddLast(T t);

@@ -1,0 +1,15 @@
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\DataStructure.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\DataStructure.pdb
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\Castle.Core.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\Moq.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\System.ValueTuple.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\Castle.Core.xml
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\Moq.pdb
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\Moq.xml
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\bin\Debug\System.ValueTuple.xml
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\obj\Debug\DataStructure.csproj.CopyComplete
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\obj\Debug\DataStructure.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\obj\Debug\DataStructure.pdb
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\DataStructure\obj\Debug\DataStructure.csprojAssemblyReference.cache

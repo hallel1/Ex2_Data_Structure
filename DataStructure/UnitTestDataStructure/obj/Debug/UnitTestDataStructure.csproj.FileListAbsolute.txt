@@ -1,0 +1,15 @@
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\UnitTestDataStructure.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\UnitTestDataStructure.pdb
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\obj\Debug\UnitTestDataStructure.csprojAssemblyReference.cache
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\obj\Debug\UnitTestDataStructure.csproj.CopyComplete
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\obj\Debug\UnitTestDataStructure.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\obj\Debug\UnitTestDataStructure.pdb
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\DataStructure.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\DataStructure.pdb
