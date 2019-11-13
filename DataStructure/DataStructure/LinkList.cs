@@ -87,10 +87,17 @@ namespace DataStructure
         }
         public void AddBefforeExistsNode(Node<T> existNode, T val)
         {
+            Node<T> toAdd = new Node<T>(val);
             if (_head._data.Equals(existNode._data))
                 AddFirst(val);
 
+            Node<T> prevNode = GetPrevNodeByVal(existNode._data);
+            if(prevNode == null)
+                throw new System.ArgumentException("This node does not exist");
 
+            toAdd._next = prevNode._next;
+            prevNode._next = toAdd;
+            
 
 
         }
@@ -141,6 +148,19 @@ namespace DataStructure
         }
         private bool DeleteNodeByValue(T val)
         {
+            Node<T> pointerPrevNode = GetPrevNodeByVal(val);
+            if (pointerPrevNode == null)
+                return false;
+
+            if(pointerPrevNode._next == _tail)
+                _tail = pointerPrevNode;
+
+            pointerPrevNode._next = pointerPrevNode._next._next;
+            return true;
+
+        }
+        private Node<T> GetPrevNodeByVal(T val)
+        {
             Node<T> pointerMoveOnList = _head;
             Node<T> pointerPrevNode = _head;
 
@@ -148,19 +168,13 @@ namespace DataStructure
             {
                 pointerMoveOnList = pointerMoveOnList._next;
                 if (pointerMoveOnList._data.Equals(val))
-                {
-                    if (pointerMoveOnList == _tail)
-                        _tail = pointerPrevNode;
-
-                    pointerPrevNode._next = pointerMoveOnList._next;
-
-                    return true;
+                {                  
+                    return pointerPrevNode;
                 }
                 pointerPrevNode = pointerPrevNode._next;
             }
-            return false;
+            return null;
         }
-
 
     }
 }
