@@ -17,6 +17,18 @@ namespace DataStructure
             _head = null;
             _tail = null;
         }
+        public LinkList(Node<T> n)
+        {
+            _head = n;
+            var pointerMoveOnList = _head;
+            while (pointerMoveOnList._next != null)
+            {
+                
+                pointerMoveOnList = pointerMoveOnList._next;
+            }
+            _tail = pointerMoveOnList;
+
+        }
         public void AddFirst(T t)
         {
             Node<T> toAdd = new Node<T>(t);
@@ -182,11 +194,13 @@ namespace DataStructure
             var pointerMoveOnList = _head;
             while (pointerMoveOnList != null)
             {
+                yield return pointerMoveOnList;
                 pointerMoveOnList = pointerMoveOnList._next;
-                yield return pointerMoveOnList._data;
+                
             }
 
         }
+ 
     }
 }
 

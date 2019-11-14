@@ -261,6 +261,25 @@ namespace UnitTestDataStructure
             l.AddBefforeExistsNode(n,7);
 
         }
+        [TestMethod]
+        public void GetEnumerator_ShuldRunForeach()
+        {
+            LinkList<int> l = new LinkList<int>();
+            l.AddFirst(1);
+            l.AddLast(2);
+            l.AddLast(3);
+
+            foreach (Node<int> n in l)
+            {
+                n._data = 0;
+            }
+
+            Assert.AreEqual(0, l[0]);
+            Assert.AreEqual(0, l[1]);
+            Assert.AreEqual(0, l[2]);
+
+
+        }
 
     }
 }
