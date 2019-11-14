@@ -14,12 +14,14 @@
             return l._tail._data;
         }
 
-        public void Pop(LinkList<T> l)
+        public T Pop(LinkList<T> l)
         {
             if (l == null)
                 throw new System.ArgumentNullException("List is empty");
 
+            T val = l._head._data;
             l._head = l._head._next;
+            return val;
         }
 
     }
