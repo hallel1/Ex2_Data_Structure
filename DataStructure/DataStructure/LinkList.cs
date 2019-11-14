@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace DataStructure
 {
 
-    public class LinkList<T> : LinkListInterface<T>
+    public class LinkList<T> : LinkListInterface<T> , IEnumerable
     {
         public Node<T> _head { get; set; }
         public Node<T> _tail { get; private set; }
@@ -176,6 +177,16 @@ namespace DataStructure
             return null;
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            var pointerMoveOnList = _head;
+            while (pointerMoveOnList != null)
+            {
+                pointerMoveOnList = pointerMoveOnList._next;
+                yield return pointerMoveOnList._data;
+            }
+
+        }
     }
 }
 
