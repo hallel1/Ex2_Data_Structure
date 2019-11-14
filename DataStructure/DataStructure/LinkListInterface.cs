@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructure
+﻿namespace DataStructure
 {
     public interface LinkListInterface<T>
     {
@@ -13,6 +7,5 @@ namespace DataStructure
         void AddAfterExistsNode(Node<T> existNode, T newVal);
         void DeleteNode(T val);
         void AddBefforeExistsNode(Node<T> existNode, T newVal);
-
     }
 }

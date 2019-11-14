@@ -1,6 +1,6 @@
-﻿using System;
-using DataStructure;
+﻿using DataStructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace UnitTestDataStructure
 {
@@ -18,7 +18,7 @@ namespace UnitTestDataStructure
             l.AddFirst(1);
 
             // Assert
-            Assert.AreEqual(l._head._data,n1._data);
+            Assert.AreEqual(l._head._data, n1._data);
 
         }
         [TestMethod]
@@ -46,7 +46,7 @@ namespace UnitTestDataStructure
             l.AddFirst(2);
 
             // Assert
-            Assert.AreEqual(l._head._data,n2._data);
+            Assert.AreEqual(l._head._data, n2._data);
 
         }
         [TestMethod]
@@ -89,11 +89,11 @@ namespace UnitTestDataStructure
             l.AddFirst(4);
 
             // Act
-            l.AddAfterExistsNode(l._head,2);
-           
+            l.AddAfterExistsNode(l._head, 2);
+
 
             // Assert
-            Assert.AreEqual(l[1],2);
+            Assert.AreEqual(l[1], 2);
 
         }
         [TestMethod]
@@ -179,7 +179,7 @@ namespace UnitTestDataStructure
 
             // Assert
             Assert.AreEqual(3, l[2]);
-            
+
 
         }
 
@@ -222,13 +222,13 @@ namespace UnitTestDataStructure
 
         [TestMethod]
         public void AddBefforeExistsNode_ShuldAddNodeToTheHead()
-        {               
+        {
             LinkList<int> l = new LinkList<int>();
             l.AddFirst(0);
             l.AddLast(1);
-            
-            l.AddBefforeExistsNode(l._head,2);
-            
+
+            l.AddBefforeExistsNode(l._head, 2);
+
             Assert.AreEqual(2, l._head._data);
 
 
@@ -258,7 +258,7 @@ namespace UnitTestDataStructure
             l.AddFirst(2);
 
             // Act
-            l.AddBefforeExistsNode(n,7);
+            l.AddBefforeExistsNode(n, 7);
 
         }
         [TestMethod]

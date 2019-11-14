@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructure
+﻿namespace DataStructure
 {
     class Stack<T>
     {
-        public void Push(LinkList<T> l,T val)
+        public void Push(LinkList<T> l, T val)
         {
             l.AddFirst(val);
         }
 
         public T Peek(LinkList<T> l)
         {
-            if(l == null)
+            if (l == null)
                 throw new System.ArgumentNullException("List is empty");
             return l._tail._data;
         }
