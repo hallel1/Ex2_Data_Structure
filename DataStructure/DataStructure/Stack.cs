@@ -1,27 +1,43 @@
-﻿namespace DataStructure
+﻿using System.Collections;
+namespace DataStructure
 {
-    class Stack<T>
+    class Stack<T> : IEnumerable
     {
-        public void Push(LinkList<T> l, T val)
+        private LinkList<T> stck;
+
+        public Stack()
         {
-            l.AddFirst(val);
+            stck = new LinkList<T>();
+        }
+        public void Push(T val)
+        {
+            stck.AddFirst(val);
         }
 
-        public T Peek(LinkList<T> l)
+        public T Peek()
         {
-            if (l == null)
+            if (stck == null)
                 throw new System.ArgumentNullException("List is empty");
-            return l._tail._data;
+            return stck._tail._data;
         }
 
-        public T Pop(LinkList<T> l)
+        public T Pop()
         {
-            if (l == null)
+            if (stck == null)
                 throw new System.ArgumentNullException("List is empty");
 
-            T val = l._head._data;
-            l._head = l._head._next;
+            T val = stck._head._data;
+            stck._head = stck._head._next;
             return val;
+        }
+        public IEnumerator GetEnumerator()
+        {
+            
+            foreach (Node<int> n in stck)
+            {
+                yield return n._data;
+            }
+
         }
 
     }

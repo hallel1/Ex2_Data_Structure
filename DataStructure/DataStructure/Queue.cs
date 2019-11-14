@@ -1,30 +1,45 @@
-﻿namespace DataStructure
+﻿using System.Collections;
+namespace DataStructure
 {
-    class Queue<T>
+    class Queue<T> : IEnumerable
     {
+        private LinkList<T> q;
 
-        public void Push(LinkList<T> l, T val)
+        public Queue()
         {
-            l.AddLast(val);
+            q = new LinkList<T>();
         }
 
-        public T Peek(LinkList<T> l)
+        public void Push(T val)
         {
-            if (l == null)
-                throw new System.ArgumentNullException("List is empty");
-            return l._head._data;
+            q.AddLast(val);
         }
 
-        public T Pop(LinkList<T> l)
+        public T Peek()
         {
-            if (l == null)
+            if (q == null)
+                throw new System.ArgumentNullException("List is empty");
+            return q._head._data;
+        }
+
+        public T Pop()
+        {
+            if (q == null)
                 throw new System.ArgumentNullException("List is empty");
 
-            T val = l._head._data;
-            l._head = l._head._next;
+            T val = q._head._data;
+            q._head = q._head._next;
             return val;
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            foreach(Node<int> n in q)
+            {
+                yield return n._data;
+            }
+
+        }
 
     }
 }
