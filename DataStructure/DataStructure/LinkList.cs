@@ -7,7 +7,7 @@ namespace DataStructure
     public class LinkList<T> : LinkListInterface<T> , IEnumerable
     {
         public Node<T> _head { get; set; }
-        public Node<T> _tail { get; private set; }
+        public Node<T> _tail { get; set; }
         public LinkList()
         {
             _head = null;
@@ -137,7 +137,7 @@ namespace DataStructure
             }
 
         }
-        #region private_function
+#region private_function
 
         private Node<T> FindNodeByIndex(int index)
         {
@@ -198,7 +198,7 @@ namespace DataStructure
             return null;
         }
 
-        #endregion
+#endregion
 
     }
 }

@@ -5,9 +5,9 @@ namespace DataStructure
     {
         private LinkList<T> q;
 
-        public Queue()
+        public Queue(LinkList<T> l)
         {
-            q = new LinkList<T>();
+            q = l;
         }
 
         public void enqueue(T val)

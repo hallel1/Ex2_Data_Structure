@@ -10,5 +10,10 @@
             _next = null;
             _data = t;
         }
+        public Node(T t,Node<T> nextNode)
+        {
+            _next = nextNode;
+            _data = t;
+        }
     }
 }

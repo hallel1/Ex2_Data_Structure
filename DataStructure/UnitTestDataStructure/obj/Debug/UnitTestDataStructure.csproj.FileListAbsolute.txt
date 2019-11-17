@@ -13,3 +13,11 @@ C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\obj\D
 C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\obj\Debug\UnitTestDataStructure.pdb
 C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\DataStructure.dll
 C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\DataStructure.pdb
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Castle.Core.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Moq.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Castle.Core.xml
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\Moq.xml
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\c_sharp_projects\Ex2_Data_Structure\DataStructure\UnitTestDataStructure\bin\Debug\System.Threading.Tasks.Extensions.xml

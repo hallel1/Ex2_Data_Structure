@@ -3,11 +3,12 @@ namespace DataStructure
 {
     public class Stack<T> : IEnumerable
     {
-        private LinkList<T> stck;
+        private LinkListInterface<T> stck;
 
-        public Stack()
+        public Stack(LinkListInterface<T> l)
         {
-            stck = new LinkList<T>();
+            // stck = new LinkList<T>(n);
+            stck = l;
         }
         public void Push(T val)
         {
@@ -18,7 +19,7 @@ namespace DataStructure
         {
             if (stck == null)
                 throw new System.ArgumentNullException("List is empty");
-            return stck._tail._data;
+            return stck[0];
         }
 
         public T Pop()
