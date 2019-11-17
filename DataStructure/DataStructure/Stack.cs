@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 namespace DataStructure
 {
-    class Stack<T> : IEnumerable
+    public class Stack<T> : IEnumerable
     {
         private LinkList<T> stck;
 

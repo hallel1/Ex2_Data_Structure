@@ -126,6 +126,19 @@ namespace DataStructure
             }
 
         }
+        public IEnumerator GetEnumerator()
+        {
+            var pointerMoveOnList = _head;
+            while (pointerMoveOnList != null)
+            {
+                yield return pointerMoveOnList;
+                pointerMoveOnList = pointerMoveOnList._next;
+
+            }
+
+        }
+        #region private_function
+
         private Node<T> FindNodeByIndex(int index)
         {
             int count = 0;
@@ -140,7 +153,7 @@ namespace DataStructure
 
             return pointerMoveOnList;
         }
-
+        
         private Node<T> FindNodeByValue(T val, bool needToDelete)
         {
             Node<T> pointerMoveOnList = _head;
@@ -185,18 +198,8 @@ namespace DataStructure
             return null;
         }
 
-        public IEnumerator GetEnumerator()
-        {
-            var pointerMoveOnList = _head;
-            while (pointerMoveOnList != null)
-            {
-                yield return pointerMoveOnList;
-                pointerMoveOnList = pointerMoveOnList._next;
-                
-            }
+        #endregion
 
-        }
- 
     }
 }
 

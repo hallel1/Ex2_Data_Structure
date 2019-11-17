@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 namespace DataStructure
 {
-    class Queue<T> : IEnumerable
+    public class Queue<T> : IEnumerable
     {
         private LinkList<T> q;
 
@@ -10,7 +10,7 @@ namespace DataStructure
             q = new LinkList<T>();
         }
 
-        public void Push(T val)
+        public void enqueue(T val)
         {
             q.AddLast(val);
         }
@@ -22,7 +22,7 @@ namespace DataStructure
             return q._head._data;
         }
 
-        public T Pop()
+        public T dequeue()
         {
             if (q == null)
                 throw new System.ArgumentNullException("List is empty");
