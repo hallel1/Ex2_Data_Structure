@@ -23,23 +23,29 @@ namespace UnitTestDataStructure
         }
 
         [TestMethod]
-        public void Peek_ShuldPopOneNode()
+        public void Peek_ShuldReturnHeadData()
         {
-            //var n2 = new Node<int>(2);
-            //var n1 = new Node<int>(1,n2);
-
-            //var mockList = new Mock<LinkListInterface<int>>(n1);
             const int VALUE = 5;
             var mockList = new Mock<LinkListInterface<int>>();
             var mockObjList = mockList.Object;
             Stack<int> s = new Stack<int>(mockObjList);
-            s.Push(VALUE);
+            //s.Push(VALUE);
             s.Peek();
 
             mockList.Setup(_ => _[It.Is<int>(passedValue => passedValue == VALUE)]).Returns(VALUE);
-            //mockList.Verify(_ => _.AddFirst(It.Is<int>(passedValue => passedValue == VALUE_TO_PUSH)));
+        }
+        [TestMethod]
+        public void Pop_ShuldDeleteHeadAndReturnData()
+        {
+            var mockList = new Mock<LinkListInterface<int>>();
+            var mockObjList = mockList.Object;
+            Stack<int> s = new Stack<int>(mockObjList);
+           
+            s.Pop();
+            int val_Peek = s.Peek();
+
+            mockList.Setup(_ => _.DeleteNode(It.Is<int>(passedValue => passedValue == val_Peek)));
 
         }
-
     }
 }

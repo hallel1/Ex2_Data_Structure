@@ -24,11 +24,8 @@ namespace DataStructure
 
         public T Pop()
         {
-            if (stck == null)
-                throw new System.ArgumentNullException("List is empty");
-
-            T val = stck._head._data;
-            stck._head = stck._head._next;
+            T val = stck[0];
+            stck.DeleteNode(val);
             return val;
         }
         public IEnumerator GetEnumerator()

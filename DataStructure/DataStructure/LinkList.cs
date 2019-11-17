@@ -121,6 +121,8 @@ namespace DataStructure
             }
             set
             {
+                if (index < 0)
+                    throw new IndexOutOfRangeException();
                 Node<T> nodeInIndex = FindNodeByIndex(index);
                 nodeInIndex._data = value;
             }
